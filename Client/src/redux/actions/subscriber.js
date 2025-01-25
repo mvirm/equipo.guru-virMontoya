@@ -5,7 +5,7 @@ import {
     sweetAlertsError,
   } from '../../components/Utils/Alerts/Alerts'
 
- const URL = 'http://localhost:3001'
+ const URL = 'https://equipo-guru-server.onrender.com'
 
 export const createSubscriberAction = (input) => {
   console.log('input en action', input);
