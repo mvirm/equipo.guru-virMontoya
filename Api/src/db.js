@@ -5,11 +5,22 @@ const ProductModel = require('./models/Product')
 const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
-//const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
-  const sequelize = new Sequelize('postgresql://euipogurudbb_user:3bERXWjhnz4VE8oTuNwKIRDbu30Sipg8@dpg-cuaig0l6l47c739ros0g-a.oregon-postgres.render.com/euipogurudbb', {
-  logging: false, //no se muestren en la consola los comandos SQL que Sequelize ejecuta
-  native: false, //usa solo la biblioteca estándar de JavaScript para las operaciones
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+ // const sequelize = new Sequelize('postgresql://euipogurudbb_user:3bERXWjhnz4VE8oTuNwKIRDbu30Sipg8@dpg-cuaig0l6l47c739ros0g-a.oregon-postgres.render.com/euipogurudbb', {
+  logging: false,
+  native: false,
+  dialectOptions: {
+    connectTimeout: 10000, // 10 segundos de tiempo de espera
+  },
+
 }); 
+sequelize.authenticate()
+  .then(() => {
+    console.log('Conexión a la base de datos establecida con éxito.');
+  })
+  .catch((error) => {
+    console.error('Error de conexión a la base de datos:', error);
+  });
 
 //inicializo los modelos en sequelize
 UserSubscriberModel(sequelize);
