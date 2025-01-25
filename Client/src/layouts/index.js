@@ -1,5 +1,8 @@
 import Subscribe from "./Subscribe";
+import Home from './Home'
+
 
 export {
-    Subscribe
+    Subscribe, 
+    Home
 }
