@@ -6,7 +6,7 @@ const { PORT } = process.env;
 
 const port = PORT || 3001;
 
-conn.sync({ force: true }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
   console.log('Las tablas han sido creadas');
   await getDataApi(); // Si necesitas obtener datos adicionales
   server.listen(port, () => {
