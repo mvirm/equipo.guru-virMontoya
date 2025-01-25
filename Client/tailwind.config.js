@@ -10,7 +10,10 @@ export default {
             customGray: '#B5B5B5',
             yellowGreen: '#E6FC15',
             customBeige: '#E3F08E'
-        }
+        },
+        fontFamily: {
+            Inter: ['Inter', 'sans-serif'], 
+          },
       },
     plugins: [],
   }
