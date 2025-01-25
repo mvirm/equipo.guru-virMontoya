@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser')
-//const routes = require('./routes/index.js');
+const router = require('./routes/index.js');
 
 
 require('./db.js');
@@ -25,7 +25,7 @@ const corsOptions = {
 server.use(cors(corsOptions));
 server.use(cookieParser());
 server.use(morgan('dev')); 
-//server.use('/', routes);
+server.use('/', router);
 
 // middleware de manejo de errores
 server.use((err, req, res, next) => { 
