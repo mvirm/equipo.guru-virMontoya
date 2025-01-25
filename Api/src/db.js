@@ -1,7 +1,7 @@
 //intancio sequelize, conecto con postgres, instancio models con sequelize como argumento, creo relaciones entre los modelos
 require('dotenv').config();
-const SubscriberModel = require('./src/models')
-const ProductModel = require('./src/models')
+const UserSubscriberModel = require('./models/UserSubscriber')
+const ProductModel = require('./models/Product')
 const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
@@ -12,15 +12,18 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 }); 
 
 //inicializo los modelos en sequelize
-SubscriberModel(sequelize);
+UserSubscriberModel(sequelize);
 ProductModel(sequelize);
 
 //destructuring de los modelos
 const {
-    Subscriber,
+    UserSubscriber,
     Product,
   } = sequelize.models;
 //aca declaro las relaciones entre ellos
+
+UserSubscriber.belongsToMany(Product, {through: 'userSubscriber-product'});
+Product.belongsToMany(UserSubscriber, {through:'userSubscriber-product'});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
