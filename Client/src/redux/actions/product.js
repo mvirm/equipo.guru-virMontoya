@@ -5,7 +5,7 @@ import {
     sweetAlertsError,
   } from '../../components/Utils/Alerts/Alerts'
 
-  const URL = 'https://equipo-guru-server.onrender.com'
+  const URL = 'https://equipo-guru-virmontoya.onrender.com'
 
 
 export const getAllProductsAction = () => {
