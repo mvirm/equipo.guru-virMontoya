@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Routes>
         <Route path="/" element={<Subscribe/>}/>
       </Routes>
