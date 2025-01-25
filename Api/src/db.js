@@ -10,8 +10,11 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   logging: false,
   native: false,
   dialectOptions: {
-    connectTimeout: 10000, // 10 segundos de tiempo de espera
-  },
+    ssl: {
+      require: true, // Esto asegura que SSL/TLS sea utilizado
+      rejectUnauthorized: false, // Esto es importante para evitar errores con certificados no verificados
+    }
+  }
 
 }); 
 sequelize.authenticate()
