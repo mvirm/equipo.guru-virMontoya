@@ -6,18 +6,7 @@ const { PORT } = process.env;
 
 const port = PORT || 3001;
 
-// // Syncing all the models at once.
-// conn.sync({ force: true }).then(async () => {
-//   await getDataApi()
-//   server.listen(port, () => {
-//     console.log(`server listening at ${port}`, server.name); 
-//     console.log('connected to the database');
-//   });
-// }).catch(error => {
-//   console.log('The connection to the database could not be established');
-// });
-
-conn.sync({ force: false }).then(async () => {
+conn.sync({ force: true }).then(async () => {
   console.log('Las tablas han sido creadas');
   await getDataApi(); // Si necesitas obtener datos adicionales
   server.listen(port, () => {

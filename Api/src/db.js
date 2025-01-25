@@ -5,8 +5,8 @@ const ProductModel = require('./models/Product')
 const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
-//Creo una instancia de conexión a la base de datos
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+//const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+  const sequelize = new Sequelize('postgresql://euipogurudbb_user:3bERXWjhnz4VE8oTuNwKIRDbu30Sipg8@dpg-cuaig0l6l47c739ros0g-a.oregon-postgres.render.com/euipogurudbb', {
   logging: false, //no se muestren en la consola los comandos SQL que Sequelize ejecuta
   native: false, //usa solo la biblioteca estándar de JavaScript para las operaciones
 }); 
