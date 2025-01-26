@@ -21,7 +21,7 @@ const FormSubscribe = () => {
             email: e.target.value})
         setError(validation({
             email: e.target.value}))
-        //console.log('en form', input);
+        console.log('en form', input);
         
     }
     const submitHandler = (e) => {
@@ -29,7 +29,7 @@ const FormSubscribe = () => {
        if (input.email !== '') {
            dispatch(createSubscriberAction(input))
            localStorage.setItem('emailSubscribe', input.email)
-           //console.log('despacho la action');
+           console.log('despacho la action');
            setInput({email: ''})
            setError({email: ''})
            setTimeout(function(){
