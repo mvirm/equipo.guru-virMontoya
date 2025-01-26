@@ -16,13 +16,14 @@ server.use(express.json({ limit: '50mb' }));
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://mvirm.github.io/equipo.guru-virMontoya'], // Orígenes permitidos
+    origin: ['http://localhost:5173', 'https://mvirm.github.io'], // Orígenes permitidos
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
     credentials: true // Permite el uso de cookies en las solicitudes
 };
 
 server.use(cors(corsOptions));
+server.options('*', cors(corsOptions));
 server.use(cookieParser());
 server.use(morgan('dev')); 
 server.use('/', router);
