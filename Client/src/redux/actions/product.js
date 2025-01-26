@@ -1,5 +1,5 @@
 import { GET_ALL_PRODUCTS,  GET_PRODUCT_BY_ID } from '../types' 
-import axios from 'Axios';
+import axios from 'axios';
 import {
     sweetAlertsSuccessfully,
     sweetAlertsError,
