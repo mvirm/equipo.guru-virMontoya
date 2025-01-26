@@ -30,7 +30,7 @@ const Home = () => {
             :<div> 
 
                 <div className="flex-grow flex items-center justify-between lg:my-8">
-                    <img src="/public/iconoColor.svg" alt="icono" className="w-16 h-auto ml-10 animate-pulse"/>
+                    <img src="iconoColor.svg" alt="icono" className="w-16 h-auto ml-10 animate-pulse"/>
                     <h1 className="text-2xl md:text-[32px] font-bold font-Inter text-white ">WELCOME {emailSubscritor}</h1>
                     <NavigateButton
                         title={button.title}

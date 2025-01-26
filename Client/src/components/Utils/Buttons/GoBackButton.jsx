@@ -9,7 +9,7 @@ const GoBackButton = () => {
 
     return (
         <button className="bg-transparent border-none outline-none" onClick={goBackHandler}>
-            <img src="/public/goBackIcon.svg" alt="goBack"/>
+            <img src="goBackIcon.svg" alt="goBack"/>
         </button>
     )
 

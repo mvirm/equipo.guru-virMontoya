@@ -1,4 +1,4 @@
-import axios from 'Axios';
+import axios from 'axios'
 import { CREATE_SUBSCRIBER } from "../types";
 import {
     sweetAlertsSuccessfully,
